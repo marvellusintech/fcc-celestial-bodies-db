@@ -142,6 +142,20 @@ CREATE TABLE public.planet (
 ALTER TABLE public.planet OWNER TO freecodecamp;
 
 --
+-- Name: planet_moon; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.planet_moon (
+    planet_id integer NOT NULL,
+    moon_id integer NOT NULL,
+    name character varying(20),
+    planet_moon_id integer NOT NULL
+);
+
+
+ALTER TABLE public.planet_moon OWNER TO freecodecamp;
+
+--
 -- Name: planet_planet_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
@@ -298,6 +312,17 @@ INSERT INTO public.planet VALUES (13, 'antares c', 'gas giant', 3, 34.00, true, 
 
 
 --
+-- Data for Name: planet_moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+INSERT INTO public.planet_moon VALUES (3, 1, NULL, 1);
+INSERT INTO public.planet_moon VALUES (5, 1, NULL, 2);
+INSERT INTO public.planet_moon VALUES (5, 6, NULL, 3);
+INSERT INTO public.planet_moon VALUES (5, 4, NULL, 4);
+INSERT INTO public.planet_moon VALUES (5, 5, NULL, 5);
+
+
+--
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
@@ -371,6 +396,14 @@ ALTER TABLE ONLY public.moon
 
 
 --
+-- Name: planet_moon planet_moon_planet_id_moon_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet_moon
+    ADD CONSTRAINT planet_moon_planet_id_moon_id_key UNIQUE (planet_id, moon_id);
+
+
+--
 -- Name: planet planet_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -416,6 +449,22 @@ ALTER TABLE ONLY public.star
 
 ALTER TABLE ONLY public.moon
     ADD CONSTRAINT moon_planet_id_fkey FOREIGN KEY (planet_id) REFERENCES public.planet(planet_id);
+
+
+--
+-- Name: planet_moon planet_moon_moon_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet_moon
+    ADD CONSTRAINT planet_moon_moon_id_fkey FOREIGN KEY (moon_id) REFERENCES public.moon(moon_id);
+
+
+--
+-- Name: planet_moon planet_moon_planet_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet_moon
+    ADD CONSTRAINT planet_moon_planet_id_fkey FOREIGN KEY (planet_id) REFERENCES public.planet(planet_id);
 
 
 --
