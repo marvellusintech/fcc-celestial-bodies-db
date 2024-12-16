@@ -134,7 +134,8 @@ CREATE TABLE public.planet (
     star_id integer NOT NULL,
     temperature numeric(4,2),
     has_moon boolean,
-    mass integer NOT NULL
+    mass integer NOT NULL,
+    description text
 );
 
 
@@ -253,6 +254,18 @@ INSERT INTO public.galaxy VALUES (5, 'sm magellanic cloud', 'A satellite galaxy'
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 'mecury', 'terrestrial', 1, 34.00, false, 3, 'the smallest planet');
+INSERT INTO public.planet VALUES (2, 'venus', 'terrestrial', 1, 34.00, false, 3, 'a rocky planet');
+INSERT INTO public.planet VALUES (3, 'earth', 'terrestrial', 1, 34.00, true, 3, 'the only known planet to support life');
+INSERT INTO public.planet VALUES (5, 'mars', 'terrestrial', 1, 34.00, true, 3, 'red planet');
+INSERT INTO public.planet VALUES (6, 'jupiter', 'gas giant', 1, 34.00, true, 3, 'largest planet');
+INSERT INTO public.planet VALUES (7, 'saturn', 'gas giant', 1, 34.00, true, 3, 'ring system planet');
+INSERT INTO public.planet VALUES (8, 'sirius b', 'white dwarf', 4, 34.00, false, 3, 'A dense, small companion..');
+INSERT INTO public.planet VALUES (9, 'proxima b', 'terrestrial', 3, 34.00, false, 3, 'A potentially habitable exoplanet');
+INSERT INTO public.planet VALUES (10, 'kepler', 'super-earth', 3, 34.00, false, 3, 'An exoplanet');
+INSERT INTO public.planet VALUES (11, 'titan', 'moon', 3, 34.00, false, 3, 'Large moon of saturn');
+INSERT INTO public.planet VALUES (12, 'Betelgeuse', 'gas giant', 3, 34.00, true, 3, 'A gas giant');
+INSERT INTO public.planet VALUES (13, 'antares c', 'gas giant', 3, 34.00, true, 3, 'A gas giant');
 
 
 --
@@ -286,7 +299,7 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 13, true);
 
 
 --
