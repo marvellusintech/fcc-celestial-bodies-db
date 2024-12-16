@@ -242,6 +242,7 @@ INSERT INTO public.galaxy VALUES (2, 'Andremeda', 'The nearest spiral galaxy', f
 INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'A smaller spiral galaxy', false, 3.20, 12000, false, 'spiral', 60000);
 INSERT INTO public.galaxy VALUES (4, 'lg magellanic cloud', 'A satellite galaxy', false, 3.20, 12000, false, 'irregular', 60000);
 INSERT INTO public.galaxy VALUES (5, 'sm magellanic cloud', 'A satellite galaxy', false, 3.20, 12000, false, 'irregular', 60000);
+INSERT INTO public.galaxy VALUES (6, 'Whirl', 'A classic spiral', false, 23.00, 10, false, 'spiral', 76);
 
 
 --
@@ -285,7 +286,7 @@ INSERT INTO public.star VALUES (7, 'UY scuti', 'red supergiant', 5, false, 8.60,
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 5, true);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 
 
 --
