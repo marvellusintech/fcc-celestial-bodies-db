@@ -170,10 +170,13 @@ CREATE TABLE public.star (
     star_id integer NOT NULL,
     name character varying(20),
     type character varying(20),
-    galaxy_id integer,
+    galaxy_id integer NOT NULL,
     is_visible_from_earth boolean,
     distance_from_earth numeric(15,2),
-    luminosity numeric(15,2)
+    luminosity numeric(15,2),
+    shape character varying(20),
+    mass numeric(4,2),
+    description text
 );
 
 
@@ -256,6 +259,13 @@ INSERT INTO public.galaxy VALUES (5, 'sm magellanic cloud', 'A satellite galaxy'
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 'Sun', 'G-type-Main', 1, true, 0.00, 1.00, 'spherical', 1.90, 'the star at the center of the solar system');
+INSERT INTO public.star VALUES (2, 'Betelgeuse', 'red-supergiant', 2, true, 0.00, 1.00, 'spherical', 1.90, 'a red massive supergiant in the constellation');
+INSERT INTO public.star VALUES (3, 'Proxima Centauri', 'M-type red dwarf', 1, true, 0.00, 1.00, 'spherical', 1.90, 'the closest star to the sun');
+INSERT INTO public.star VALUES (4, 'sirius A', 'A-type', 3, true, 8.60, 25.40, 'spherical', 2.20, 'the brightest star on earth');
+INSERT INTO public.star VALUES (5, 'Vega', 'A-type', 4, true, 8.60, 25.40, 'oblate', 2.20, 'a prominet star');
+INSERT INTO public.star VALUES (6, 'Rigel', 'Blue supergiant', 2, true, 8.60, 25.40, 'spherical', 2.20, 'a brilliant blue');
+INSERT INTO public.star VALUES (7, 'UY scuti', 'red supergiant', 5, false, 8.60, 25.40, 'spherical', 2.20, 'one of the largest stars by radius');
 
 
 --
@@ -283,7 +293,7 @@ SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
 -- Name: star_star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
+SELECT pg_catalog.setval('public.star_star_id_seq', 7, true);
 
 
 --
@@ -327,6 +337,14 @@ ALTER TABLE ONLY public.planet
 
 
 --
+-- Name: star star_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_name_key UNIQUE (name);
+
+
+--
 -- Name: star star_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -356,6 +374,14 @@ ALTER TABLE ONLY public.planet
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_galaxy_id_fkey FOREIGN KEY (galaxy_id) REFERENCES public.galaxy(galaxy_id);
+
+
+--
+-- Name: star star_galaxy_id_fkey1; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_galaxy_id_fkey1 FOREIGN KEY (galaxy_id) REFERENCES public.galaxy(galaxy_id);
 
 
 --
