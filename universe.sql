@@ -249,6 +249,34 @@ INSERT INTO public.galaxy VALUES (6, 'Whirl', 'A classic spiral', false, 23.00, 
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'moon', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (4, 'phobos', 3, 'natural satellite', NULL, 34, 'larger and closer of mas two moons');
+INSERT INTO public.moon VALUES (5, 'deimos', 2, 'natural satellite', NULL, 22, 'smaller  mars two moons');
+INSERT INTO public.moon VALUES (6, 'europa', 5, 'natural satellite', NULL, 22, 'a jupiter galilean');
+INSERT INTO public.moon VALUES (7, 'titan', 5, 'natural satellite', NULL, 22, 'moon');
+INSERT INTO public.moon VALUES (8, 'titan a', 5, 'natural satellite', NULL, 22, 'moon');
+INSERT INTO public.moon VALUES (9, 'titan b', 5, 'natural satellite', NULL, 22, 'moon');
+INSERT INTO public.moon VALUES (10, 'titan c', 1, 'natural satellite', NULL, 22, 'moon');
+INSERT INTO public.moon VALUES (11, 'titan d', 1, 'natural satellite', NULL, 22, 'moon');
+INSERT INTO public.moon VALUES (12, 'europa a', 5, 'natural satellite', NULL, 22, 'a jupiter galilean');
+INSERT INTO public.moon VALUES (13, 'europa b', 5, 'natural satellite', NULL, 22, 'a jupiter galilean');
+INSERT INTO public.moon VALUES (14, 'europa c', 5, 'natural satellite', NULL, 22, 'a jupiter galilean');
+INSERT INTO public.moon VALUES (15, 'europa d', 5, 'natural satellite', NULL, 22, 'a jupiter galilean');
+INSERT INTO public.moon VALUES (16, 'moon a', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (17, 'moon b', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (18, 'moon c', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (19, 'moon d', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (20, 'moon e', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (21, 'moon f', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (23, 'moonlight', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (24, 'moonlight a', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (25, 'moonlight b', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (26, 'moonlight c', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (27, 'moonlight e', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (28, 'moonlight f', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (29, 'moonlight g', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (30, 'moonlight h', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
+INSERT INTO public.moon VALUES (31, 'moonlight i', 3, 'natural satellite', NULL, 34, 'earths only natural satellite,known for its phases');
 
 
 --
@@ -293,7 +321,7 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 31, true);
 
 
 --
