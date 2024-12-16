@@ -233,6 +233,11 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'our home glaxy', true, 0.00, 12, true, 'barred spiral', 100000);
+INSERT INTO public.galaxy VALUES (2, 'Andremeda', 'The nearest spiral galaxy', false, 2.50, 10000, false, 'spiral', 220000);
+INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'A smaller spiral galaxy', false, 3.20, 12000, false, 'spiral', 60000);
+INSERT INTO public.galaxy VALUES (4, 'lg magellanic cloud', 'A satellite galaxy', false, 3.20, 12000, false, 'irregular', 60000);
+INSERT INTO public.galaxy VALUES (5, 'sm magellanic cloud', 'A satellite galaxy', false, 3.20, 12000, false, 'irregular', 60000);
 
 
 --
@@ -257,7 +262,7 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Name: galaxy_galaxy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 1, false);
+SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 5, true);
 
 
 --
